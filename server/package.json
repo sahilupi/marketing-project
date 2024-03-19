@@ -1,0 +1,29 @@
+{
+  "name": "markutting-server",
+  "version": "1.0.0",
+  "description": "server for promoting youtube videos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^9.0.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.6.4",
+    "nodemailer": "^6.8.0",
+    "nodemon": "^2.0.20",
+    "razorpay": "^2.8.4",
+    "stripe": "^12.3.0"
+  }
+}

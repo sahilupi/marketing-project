@@ -1,0 +1,9 @@
+.footer__copyright-3 p {
+  max-width: 100%;
+}
+
+.header__brand {
+  /* font-size: 32px; */
+  padding-bottom: 40px;
+  color: var(--white);
+}

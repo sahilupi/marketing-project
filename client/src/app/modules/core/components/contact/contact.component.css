@@ -1,0 +1,9 @@
+.line::after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 100%;
+  left: calc(50% - 1px);
+  top: 0;
+  background: transparent;
+}

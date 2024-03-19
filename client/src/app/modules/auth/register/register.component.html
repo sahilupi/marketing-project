@@ -1,0 +1,66 @@
+
+      <!-- Contact area start -->
+      <section class="contact__area-6">
+        <div class="container g-0  pt-120 pb-110">
+          <span class="line-3"></span>
+          <div class="row">
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+              <div class="sec-title-wrapper">
+                <h2 class="sec-title-2 animation__char_come"></h2>
+              </div>
+            </div>
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+              <div class="sec-title-wrapper">
+                <h2 class="sec-title-2 animation__char_come">Sign Up</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row contact__btm">
+            <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
+              <app-contact-data></app-contact-data>
+            </div>
+            <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7">
+              <div class="contact__form">
+                <form [formGroup]="signupForm" (ngSubmit)="submitForm()">
+                  <div class="row g-3">
+                    <div class="col-xxl-6 col-xl-6 col-12">
+                      <input type="text" formControlName="fullName" placeholder="Your Name *">
+                      <small *ngIf="(f['fullName'].hasError('required') && f['fullName'].touched) || (f['fullName'].hasError('required') && submitted)" class="has-error">Name is required</small>
+                    </div>
+                    <div class="col-xxl-6 col-xl-6 col-12">
+                      <input type="email" formControlName="email" placeholder="Email *">
+                      <small *ngIf="(f['email'].hasError('required') && f['email'].touched) || (f['email'].hasError('required') && submitted)" class="has-error">Email is required</small>
+                      <small *ngIf="(f['email'].hasError('email') && f['email'].touched) || (f['email'].hasError('email') && submitted)" class="has-error">Email is invalid</small>
+                    </div>
+                    <div class="col-xxl-6 col-xl-6 col-12">
+                      <input type="password" formControlName="password" placeholder="Password *">
+                      <small *ngIf="(f['password'].hasError('required') && f['password'].touched) || (f['password'].hasError('required') && submitted)" class="has-error">Password is required</small>
+                    </div>
+
+                    <div class="col-xxl-6 col-xl-6 col-12">
+                      <input type="password" formControlName="confirmPassword" placeholder="Confirm Password *">
+                      <small *ngIf="(f['confirmPassword'].hasError('required') && f['confirmPassword'].touched) || (f['confirmPassword'].hasError('required') && submitted)" class="has-error">Please confirm your password.</small>
+                      <small *ngIf="f['confirmPassword'].hasError('confirmedValidator') ||
+                      f['password'].hasError('confirmedValidator')" class="has-error">Passwords do not match.</small>
+                    </div>
+                  </div>
+                  <small *ngIf="serverErrorMessages?.trim()" class="has-error"> {{ serverErrorMessages }}</small>
+                  <p class="link">Already have a account?
+                    <a routerLink="/auth/user/login" (click)="scrollTop()">Login here</a>
+                  </p>
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <div class="btn_wrapper">
+                        <button class="wc-btn-primary btn-hover btn-item"><span></span> Signup <i
+                            class="fa-solid fa-arrow-right"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact area end -->
+

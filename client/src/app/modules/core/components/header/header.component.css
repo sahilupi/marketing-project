@@ -1,0 +1,19 @@
+.header__area-3 {
+  background-color: #c8f31d9f;
+  backdrop-filter: blur(10px);
+}
+
+.menu-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.header__brand {
+  font-size: 32px;
+}
+
+@media (min-width: 600px) {
+  #open_offcanvas {
+    display: none;
+  }
+}

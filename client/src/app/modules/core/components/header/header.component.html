@@ -1,0 +1,182 @@
+<header class="header__area-3">
+  <div class="header__inner-3">
+    <div class="header__logo-2">
+      <a routerLink="/" (click)="scrollTop()" (click)="scrollTop()" class="logo-dark">
+        <h3 class="header__brand sec-title title-anim
+          ng-tns-c19-3">Markutting</h3>
+      </a>
+      <a routerLink="/" (click)="scrollTop()" class="logo-light">
+        <h3 class="header__brand sec-title title-anim ng-tns-c19-3">Markutting</h3>
+      </a>
+    </div>
+    <!-- <div class="header__logo-2">
+      <a routerLink="/" (click)="scrollTop()" class="logo-dark"><img src="assets/imgs/logo/logo-black.png" alt="Site Logo"></a>
+      <a routerLink="/" (click)="scrollTop()" class="logo-light"><img src="assets/imgs/logo/site-logo-white-2.png" alt="Site Logo"></a>
+    </div> -->
+    <div class="header__nav-2">
+      <ul class="main-menu-3 menu-anim">
+        <li><a routerLink="/" (click)="scrollTop()">
+            <div class="menu-text"><span>h</span><span>o</span><span>m</span><span>e</span></div>
+          </a>
+        </li>
+        <li><a routerLink="/about" (click)="scrollTop()">
+            <div class="menu-text"><span>a</span><span>b</span><span>o</span><span>u</span><span>t</span></div>
+          </a></li>
+        <li><a routerLink="/advertiser/allvideocheckout" (click)="scrollTop()">
+            <div class="menu-text">
+              <span>P</span><span>r</span><span>o</span><span>m</span><span>o</span><span>t</span><span>e</span>
+            </div>
+          </a>
+        </li>
+        <li><a routerLink="/contact" (click)="scrollTop()">
+            <div class="menu-text">
+              <span>c</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span>
+            </div>
+          </a>
+        </li>
+        <li *ngIf="!isLoggedIn()">
+          <a routerLink="/auth/user/login" (click)="scrollTop()" >
+            <div class="menu-text">
+              <span>l</span><span>o</span><span>g</span><span>i</span><span>n</span>
+            </div>
+          </a>
+        </li>
+        <li *ngIf="isLoggedIn()">
+          <a (click)="scrollTop();onLogOut()" >
+            <div class="menu-text">
+              <span>l</span><span>o</span><span>g</span><span>o</span><span>u</span><span>t</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="header__nav-icon-3">
+      <ul class="main-menu-3 menu-anim">
+        <li class="search-icon" id="search_icon">
+          <a>
+            <i class="fa-solid fa-user-alt"><i class="fa fa-caret-down"></i></i>
+          </a>
+          <ul class="main-dropdown">
+            <li><a (click)="scrollTop()" routerLink="/advertiser/allvideocheckout">Promote Video</a></li>
+            <li *ngIf="!isLoggedIn()"><a (click)="scrollTop()" routerLink="/auth/user/login">Login</a></li>
+            <li *ngIf="isAdminLoggedIn()"><a (click)="scrollTop()" routerLink="/admin/orders">Admin</a></li>
+            <li *ngIf="isLoggedIn()"><a (click)="scrollTop()" routerLink="/advertiser/profile">Profile</a></li>
+            <li *ngIf="isLoggedIn()"><a (click)="onLogOut()" routerLink="/auth/user/login">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+      <button id="open_offcanvas" (click)="toggleMenu()"><img src="assets/imgs/icon/menu-black.png"
+          alt="Menubar Icon"></button>
+    </div>
+  </div>
+</header>
+
+<!-- Header area end -->
+
+<!-- Offcanvas area start -->
+<div class="offcanvas__area" [ngClass]="isMenuOpen ? 'menu-open' : ''">
+  <div class="offcanvas__body">
+    <div class="offcanvas__left">
+      <div class="offcanvas__logo">
+        <a routerLink="/" (click)="scrollTop()">
+          <h3 class="header__brand sec-title title-anim ng-tns-c19-3" style="color: white">Markutting</h3>
+        </a>
+      </div>
+      <div class="offcanvas__social">
+        <h3 class="social-title">Follow Us</h3>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">YouTube</a></li>
+        </ul>
+      </div>
+      <div class="offcanvas__links">
+        <ul>
+          <li><a routerLink="/about" (click)="scrollTop()">About</a></li>
+          <li><a routerLink="/contact" (click)="scrollTop()">contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="offcanvas__mid">
+      <div class="offcanvas__menu-wrapper mean-container">
+        <div class="mean-bar"><a href="#nav" class="meanmenu-reveal" style="right: 0px; left: auto;
+            display: inline;"><span><span><span></span></span></span></a>
+          <nav class="mean-nav">
+            <ul class="menu-anim">
+              <li><a routerLink="/" (click)="scrollTop(); toggleMenu()">
+                  <div class="menu-text"><span>h</span><span>o</span><span>m</span><span>e</span></div>
+                </a>
+              </li>
+              <li><a routerLink="/about" (click)="scrollTop(); toggleMenu()">
+                  <div class="menu-text"><span>a</span><span>b</span><span>o</span><span>u</span><span>t</span></div>
+                </a>
+              </li>
+              <li><a routerLink="/advertiser/allvideocheckout" (click)="scrollTop(); toggleMenu()">
+                  <div class="menu-text">
+                    <span>p</span><span>r</span><span>o</span><span>m</span><span>o</span><span>t</span><span>e</span>
+                  </div>
+                </a>
+              </li>
+              <li *ngIf="isLoggedIn()"><a routerLink="/advertiser/profile" (click)="scrollTop(); toggleMenu()">
+                  <div class="menu-text">
+                    <span>p</span><span>r</span><span>o</span><span>f</span><span>i</span><span>l</span><span>e</span>
+                  </div>
+                </a>
+              </li>
+              <li *ngIf="isAdminLoggedIn()"><a routerLink="/admin/orders" (click)="scrollTop(); toggleMenu()">
+                  <div class="menu-text">
+                    <span>a</span><span>d</span><span>m</span><span>i</span><span>n</span>
+                  </div>
+                </a>
+              </li>
+              <li class="mean-last"><a routerLink="/contact" (click)="scrollTop(); toggleMenu()">
+                  <div class="menu-text">
+                    <span>c</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span>
+                  </div>
+                </a>
+              </li>
+              <li *ngIf="isLoggedIn()">
+                <a (click)="onLogOut(); toggleMenu()">
+                  <div class="menu-text">
+                    <span>L</span><span>o</span><span>g</span><span>o</span><span>u</span><span>t</span>
+                  </div>
+                </a>
+              </li>
+              <li *ngIf="!isLoggedIn()" (click)="toggleMenu()">
+                <a routerLink="/auth/user/login">
+                  <div class="menu-text">
+                    <span>L</span><span>o</span><span>g</span><span>i</span><span>n</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="mean-push"></div>
+      </div>
+    </div>
+    <div class="offcanvas__right">
+      <div class="offcanvas__search">
+        <form action="#">
+          <input type="text" name="search" placeholder="Search keyword">
+          <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+      <div class="offcanvas__contact">
+        <h3>Get in touch</h3>
+        <ul>
+          <li><a href="tel:02094980547">+(02) - 094 980 547</a></li>
+          <li><a href="mailto:info@extradesign.com">info@extradesign.com</a></li>
+          <li>230 Norman Street New York, QC (USA) H8R 1A1</li>
+        </ul>
+      </div>
+      <img src="assets/imgs/shape/11.png" alt="shape" class="shape-1">
+      <img src="assets/imgs/shape/12.png" alt="shape" class="shape-2">
+    </div>
+    <div class="offcanvas__close" (click)="toggleMenu()">
+      <button type="button" id="close_offcanvas"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>
+</div>
+<!-- Offcanvas area end -->

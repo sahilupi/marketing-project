@@ -1,0 +1,16 @@
+ <!-- Price area start -->
+ <section class="price__area pt-130 pb-140">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-12 col-xl-12 col-lg-12">
+        <div class="sec-title-wrapper">
+          <h2 class="sec-sub-title title-anim"*ngIf="isLoading">Confirming your order...</h2>
+          <h3 class="sec-title title-anim" *ngIf="isSuccessFromServer && !isLoading">Thank you for purchasing from us!</h3>
+          <h3 *ngIf="isSuccessFromServer && !isLoading">We have recieved your order and will connect you soon!</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Price area end -->
+

@@ -1,0 +1,17 @@
+.has-error {
+  border-color: red;
+  color: red;
+}
+
+.has-error:focus {
+  border-color: red;
+  color: red;
+}
+
+.contact__form input, .contact__form textarea {
+  margin-bottom: 0;
+}
+
+.link {
+  padding: 20px 0;
+}

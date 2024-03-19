@@ -1,0 +1,12 @@
+.price__area, .pt-130 {
+  padding-top: 130px
+}
+
+.accordion-body-main {
+  margin-bottom: 12px;
+}
+
+.accordion-body-header {
+  font-size: 16px;
+  font-weight: 500;
+}

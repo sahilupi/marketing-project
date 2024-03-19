@@ -1,0 +1,200 @@
+
+<!-- Contact area start -->
+<section class="contact__area-6">
+  <div class="container g-0 pt-120 pb-110">
+    <span class="line-3"></span>
+    <div class="row">
+      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+        <div class="sec-title-wrapper">
+          <h2 class="sec-title-2 animation__char_come">Enter Order Details</h2>
+        </div>
+      </div>
+      <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+        <div class="contact__text">
+          <p>Increase views, likes and subscribers on your YouTube videos now.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row contact__btm">
+      <!-- <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-5">
+              <div class="contact__info">
+                <h3 class="sub-title-anim-top animation__word_come">Don't be afraid man ! <br>say hello</h3>
+                <ul>
+                  <li><a href="tel:+(2)578365379">+(2) 578 - 365 - 379</a></li>
+                  <li><a href="mailto:hello@example.com">hello@example.com</a></li>
+                  <li><span>230 Norman Street New York, <br> QC (USA) H8R 1A1</span></li>
+                </ul>
+              </div>
+            </div> -->
+      <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-7" style="margin: auto;">
+        <div class="contact__form">
+          <form [formGroup]="checkoutForm" (ngSubmit)="submitForm()">
+            <div class="contact__info">
+              <h3 class="sub-title-anim-top animation__word_come">1) INPUT YOUR
+                YOUTUBE VIDEO LINK *</h3>
+            </div>
+            <div class="row g-3">
+              <div class="col-xxl-12 col-xl-12 col-12">
+                <input type="text" formControlName="youtubeLink"
+                  placeholder="https://www.youtube.com/watch?v=1H8djgSSyXI *">
+                  <small *ngIf="(f['youtubeLink'].hasError('required') && f['youtubeLink'].touched) || (f['youtubeLink'].hasError('required') && submitted)" class="has-error">Youtube link is required</small>
+              </div>
+              <div class="col-xxl-4 col-xl-4 col-4">
+                <button class="wc-btn-primary btn-hover btn-item preview-button"
+                  type="button" (click)="showVideoThumbnail()"><span></span>
+                  Preview Video <i
+                    class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+            <div class="row g-3" style="margin-top: 2rem;" *ngIf="previewLink && f['youtubeLink'].value">
+              <div class="col-xxl-12 col-xl-12 col-12">
+                <iframe style='width: 100%; height: 364px;'
+                  [src]="previewLink | safe"></iframe>
+              </div>
+            </div>
+
+            <div class="row g-3" style="margin-top: 4rem;">
+              <hr>
+              <div class="contact__info" style="margin-bottom: -1rem;">
+                <h3 class="sub-title-anim-top animation__word_come">2) WANTS AND
+                  TARGET AUDIENCE *</h3>
+                <h3 class="sub-title-anim-top animation__word_come subheader">BESIDES
+                  VIEWS, I ALSO WANT:</h3>
+              </div>
+              <div class="col-xxl-12 col-xl-12 col-12">
+                <span *ngFor="let audiene of targetAndWantsArray; let i=index">
+                  <input (change)="onTargetAndWantsCheckboxChange($event)"
+                    type="checkbox" formArrayName="targetAndWants"
+                    [id]="audiene.id" [value]="audiene.value" class="checkbox"><label
+                    class="label" [for]="audiene.id">{{ audiene.name}}</label>
+                </span>
+              </div>
+            </div>
+            <div class="row g-3">
+              <div class="contact__info">
+                <hr>
+                <h3 class="sub-title-anim-top animation__word_come subheader">GENDER:</h3>
+              </div>
+              <div class="col-xxl-12 col-xl-12 col-12" style="margin-top:
+                -1rem;">
+                <input type="radio" formControlName="gender" id="male"
+                  value="Male" class="checkbox"><label class="label" for="male">Male</label>
+                <input type="radio" formControlName="gender" id="female"
+                  value="Female"><label for="female" class="label">Female
+                </label>
+              </div>
+            </div>
+            <div class="row g-3">
+              <div class="contact__info">
+                <hr>
+                <h3 class="sub-title-anim-top animation__word_come subheader">AGE:</h3>
+              </div>
+              <div class="col-xxl-12 col-xl-12 col-12" style="margin-top:
+                -1rem;">
+                <input type="radio" formControlName="age" id="13–24"
+                  value="13–24"
+                  class="checkbox"><label class="label" for="13–24">13–24
+                </label>
+                <input type="radio" formControlName="age" id="25–34"
+                  value="25–34"
+                  class="checkbox"><label class="label" for="25–34">25–34
+                </label>
+                <input type="radio" formControlName="age" id="35–44"
+                  value="35–44"
+                  class="checkbox"><label class="label" for="35–44">35–44
+                </label>
+                <input type="radio" formControlName="age" id="45–54"
+                  value="45–54"
+                  class="checkbox"><label class="label" for="45–54">45–54
+                </label>
+                <input type="radio" formControlName="age" id="55–64"
+                  value="55–64"
+                  class="checkbox"><label class="label" for="55–64">55–64
+                </label>
+              </div>
+            </div>
+
+            <div class="row g-3">
+              <div class="contact__info">
+                <hr>
+                <h3 class="sub-title-anim-top animation__word_come subheader" style="padding-bottom: 0;">Location *:</h3>
+              </div>
+              <div class="col-xxl-12 col-xl-12 col-12" style="margin-top:
+                1rem;">
+                <input type="radio" formControlName="location" id="global"
+                  value="Global"
+                  class="checkbox" (change)="onChangeLocation($event)"><label class="label" for="global">Global</label>
+                <input type="radio" formControlName="location" id="Country"
+                  value="Country" (change)="onChangeLocation($event)"><label for="Country" class="label">Country
+                </label>
+                <small *ngIf="(f['location'].hasError('required') && f['location'].touched) || (f['location'].hasError('required') && submitted)" class="has-error">Target location is required</small>
+                <input *ngIf="f['location'].value==='Country'" type="text" formControlName="country" id="Country"
+                  placeholder="Canada | India | China">
+                  <small *ngIf="(f['country'].hasError('required') && f['country'].touched) || (f['country'].hasError('required') && submitted)" class="has-error">Target country is required</small>
+              </div>
+            </div>
+            <hr *ngIf="f['location'].value!=='Country'">
+            <div class="row g-3" style="margin-top: 2rem">
+              <div class="contact__info">
+                <h3 class="sub-title-anim-top animation__word_come subheader"
+                  style="padding-bottom:0;">VIDEO CATEGORY:</h3>
+              </div>
+              <div class="col-xxl-12 col-xl-12 col-12" style="margin-top:
+                1rem;">
+                <select formControlName="videoCategory" id="videoCategory">
+                  <option value="" selected>Select</option>
+                  <option [value]="option.value" *ngFor="let  option of videoCategoryArray">{{ option.name }}</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row g-3" style="margin-top: 2rem">
+              <div class="contact__info">
+                <h3 class="sub-title-anim-top animation__word_come subheader">KEYWORDS:</h3>
+              </div>
+              <div class="col-xxl-12 col-xl-12 col-12" style="margin-top:
+                -1rem;">
+                <input type="text" formControlName="keywords"
+                  placeholder="Shopping | Ecommerce | Entertainment *" />
+              </div>
+            </div>
+
+            <div class="row g-3" style="margin-top: 2rem">
+              <div class="contact__info">
+                <h3 class="sub-title-anim-top animation__word_come">3) CHOOSE
+                  YOUR BUDGET</h3>
+                <h3 class="sub-title-anim-top animation__word_come subheader">BUDGET
+                  *:</h3>
+              </div>
+              <div class="col-xxl-12 col-xl-12 col-12" style="margin-top:
+                -1rem;">
+                <input type="number" formControlName="budget" placeholder="20"
+                  />
+                  <small *ngIf="(f['budget'].hasError('required') && f['budget'].touched) || (f['budget'].hasError('required') && submitted)" class="has-error">Budget is required</small>
+                <h3 class="sub-title-anim-top animation__word_come subheader">VIEWS:
+                  {{ onCountTotalViews() }}</h3>
+              </div>
+            </div>
+
+            <div class="row g-3" style="margin-top: 2rem">
+              <div class="contact__info">
+                <h3 class="sub-title-anim-top animation__word_come">4) PLEASE
+                  MAKE THE PAYMENT</h3>
+              </div>
+            </div>
+            <div class="row g-3">
+              <div class="col-12">
+                <div class="btn_wrapper">
+                  <button class="wc-btn-primary btn-hover btn-item"><span></span>
+                    Place <br>Order <i
+                      class="fa-solid fa-arrow-right"></i></button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Contact area end -->

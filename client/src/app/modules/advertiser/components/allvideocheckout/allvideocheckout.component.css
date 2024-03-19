@@ -1,0 +1,45 @@
+.preview-button {
+  width: 180px;
+  height: 50px;
+  border-radius: 0;
+}
+
+input[type="checkbox"], input[type="radio"]
+{
+  width: auto;
+  display: inline-block;
+  margin-right: 2px;
+}
+
+label{
+  padding-right: 20px;
+}
+
+.subheader {
+  font-size: 16px;
+}
+
+select {
+  border: none;
+  border-bottom: 1px solid var(--gray);
+  width: 100%;
+  outline: none;
+}
+
+.has-error {
+  border-color: red;
+  color: red;
+}
+
+.has-error:focus {
+  border-color: red;
+  color: red;
+}
+
+.contact__form input, .contact__form textarea {
+  margin-bottom: 0;
+}
+
+.contact__area-6 {
+  margin-top: 3rem;
+}

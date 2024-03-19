@@ -1,0 +1,43 @@
+.preview-button {
+  width: 180px;
+  height: 50px;
+  border-radius: 0;
+  background-color:var(--primary);
+}
+
+.preview-button:hover {
+  background-color: transparent;
+}
+
+.roll__wrapper {
+  animation: linear infinite;
+  -webkit-animation: linear infinite;
+  animation-name: run;
+  -webkit-animation-name: run;
+  animation-duration: 15s;
+  -webkit-animation-duration: 15s;
+}
+
+@keyframes run {
+  0% {
+    left: 200%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes run {
+  0% {
+    left: 200%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
